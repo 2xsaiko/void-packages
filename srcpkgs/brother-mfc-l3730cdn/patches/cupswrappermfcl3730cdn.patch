@@ -1,0 +1,28 @@
+--- data/opt/brother/Printers/mfcl3730cdn/cupswrapper/cupswrappermfcl3730cdn	2020-06-10 19:06:09.955858016 +0200
++++ data/opt/brother/Printers/mfcl3730cdn/cupswrapper/cupswrappermfcl3730cdn	2020-06-10 19:04:19.000000000 +0200
+@@ -48,22 +48,13 @@
+   rm -f /usr/lib64/cups/filter/brother_lpdwrapper_${printer_model}
+ #  rm -f /opt/brother/${device_model}/${printer_model}/cupswrapper/brother_lpdwrapper_${printer_model}
+ #  rm -f /usr/local/Brother/${device_model}/${printer_model}/cupswrapper/brcupsconfpt1
+-if [  -e /etc/init.d/cups ]; then
+-   /etc/init.d/cups restart
+-elif [  -e /etc/init.d/cupsys ]; then
+-   /etc/init.d/cupsys restart
+-fi
+-#  /etc/init.d/cups restart
++  sv restart cups
++  
+   exit 0
+ fi
+ if [ "$1" = "-r" ]; then
+   lpadmin -x ${printer_name}
+-if [  -e /etc/init.d/cups ]; then
+-   /etc/init.d/cups restart
+-elif [  -e /etc/init.d/cupsys ]; then
+-   /etc/init.d/cupsys restart
+-fi
+-#  /etc/init.d/cups restart
++  sv restart cups
+   exit 0
+ fi
+ if [ "$1" = "help" ] || [ "$1" = "-h" ]; then
