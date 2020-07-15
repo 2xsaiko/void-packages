@@ -1,0 +1,14 @@
+# Template file for 'akonadiconsole'
+pkgname=akonadiconsole
+version=20.04.3
+revision=1
+build_style=cmake
+hostmakedepends="extra-cmake-modules kdoctools gettext"
+makedepends="akonadi5-devel kcontacts-devel kcalendarcore-devel kmime-devel libkdepim-devel calendarsupport-devel messagelib-devel"
+depends=""
+short_desc="Akonadi management and debugging console"
+maintainer="2xsaiko <pkg@dblsaiko.net>"
+license="GPL-2.0-or-later, LGPL-2.1-or-later, GFDL-1.2-or-later"
+homepage="https://kde.org/applications/en/internet/org.kde.kmail2"
+distfiles="${KDE_SITE}/release-service/${version}/src/akonadiconsole-${version}.tar.xz"
+checksum=acd6d63a30af49ec66ff30c3ecdd4e53c4f4a15c4d1e41ffd988366b5106447c
